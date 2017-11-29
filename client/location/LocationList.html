@@ -1,0 +1,46 @@
+<template name="LocationList">
+
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">Locations</h3>
+      <div class="box-tools pull-right">
+        {{#if $.Session.get 'newLocation'}}
+        <a href="#" title="cancel" class="btn btn-xs btn-danger new-location-cancel"><i class="fa fa-times"></i> Cancel</a>
+        {{else}}
+        <a href="#" title="Add New Location" class="btn btn-xs btn-success new-location"><i class="fa fa-plus"></i> New</a>
+        {{/if}}
+      </div>
+    </div>
+    <div class="box-body">
+    {{#if $.Session.get 'newLocation'}}
+    {{> NewLocation}}
+    {{else}}
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="col-xs-8">Name</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each locationList}}
+        <tr>
+          <td><a href="/location/{{_id}}" title="View {{name}}" class="location-details">{{name}}</a></td>
+          <td>{{status}}</td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="2">
+            <div class="alert alert-info">
+              <p><i class="fa fa-info-circle"></i> No locations.</p>
+            </div>
+          </td>
+        </tr>
+    {{/each}}
+      </tbody>
+    </table>
+    {{/if}}
+    </div>
+  </div>
+
+</template>

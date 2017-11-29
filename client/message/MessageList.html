@@ -1,0 +1,33 @@
+<template name="MessageList">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">Messages ({{messageCount}})</h3>
+      <div class="box-tools pull-right">
+        <button id="reset" class="btn btn-xs btn-danger">Reset</button>
+      </div>
+    </div>
+    <div class="box-body">
+      <ul class="list-group list-group-unbordered">
+      {{#each messages}}
+        <li class="list-group-item">
+          <div class="row">
+              <div class="col-xs-3">
+                  {{topic}}
+              </div>
+              <div class="col-xs-7">
+                  {{message}}
+              </div>
+              <div class="col-xs-2">
+                  {{createdAt}}
+              </div>
+          </div>
+        </li>
+      {{else}}
+        <li class="list-group-item">
+          <div class="alert alert-info">No Messages</div>
+        </li>
+      {{/each}}
+      </ul>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,21 @@
+<template name="EventViewError">
+  {{> ContentHeader title="Sensors" subTitle="Error"}}
+  <section class="content">
+    <div class="row">
+      {{#each events}}
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box {{eventStatus message}}">
+          <span class="info-box-icon"><i class="fa fa-cogs"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-number">
+              <a href="/sensor/view/{{_id}}" title="View Sensor"><span style="color:white">{{topic}}</span></a>
+            </span>
+            {{message}}
+            <span class="progress-description">{{dateFormat modifiedAt}}</span>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+</template>

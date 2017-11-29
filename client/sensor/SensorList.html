@@ -1,0 +1,26 @@
+<template name="SensorList">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">Sensors</h3>
+      <div class="box-tools pull-right">
+        <a href="#" title="Add New Sensor" class="btn btn-xs btn-success new-sensor"><i class="fa fa-plus"></i> New</a>
+      </div>
+      <div class="box-body">
+        <ul class="list-group list-group-unbordered">
+        {{#each sensorList this.locationId}}
+            <li class="list-group-item">
+              <i class="fa {{sensorTypeIcon type}}"></i>
+              <a href="#" title="View Sensor" class="view-sensor">{{name}}</a> <span class="pull-right small">{{status}}</span>
+            </li>
+        {{else}}
+          <li class="list-group-item">
+            <div class="alert alert-info">
+              <p><i class="fa fa-info-circle"></i> No Sensors.</p>
+            </div>
+          </li>
+        {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>

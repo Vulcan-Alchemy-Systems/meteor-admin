@@ -1,0 +1,28 @@
+{
+  "private": {
+    "mqttHost": "mqtt://localhost:1883"
+  },
+  "public": {
+    "ga": {
+      "account": "UA-XX"
+    },
+    "siteName": "Vulcan Alchemy Systems",
+    "siteAbrv": "VAS",
+    "siteUrl": "https://vulcanalchemysystems.com/",
+    "copyright": "2016",
+    "siteVersion": "1.0.0",
+    "shortDate": "MM/DD/YYYY",
+    "longDate": "MM/DD/YYYY HH:mm:ss",
+    "features": {
+      "tasks": true,
+      "messages": true,
+      "notifications": true,
+      "user": true,
+      "displayUserStatus": true,
+      "controlSlider": true,
+      "breadcrumb": true,
+      "search": true,
+      "demoMenu": false
+    }
+  }
+}

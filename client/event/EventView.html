@@ -1,0 +1,20 @@
+<template name="EventView">
+  {{> ContentHeader title="View Sensor" subTitle=""}}
+  <section class="content">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="info-box {{eventStatus event.message}}">
+          <span class="info-box-icon"><i class="fa fa-cogs"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-number">{{event.topic}}</span>
+            {{event.message}}
+            <span class="progress-description">{{dateFormat event.modifiedAt}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        {{> NoticesEvent event=event._id}}
+      </div>
+    </div>
+  </section>
+</template>

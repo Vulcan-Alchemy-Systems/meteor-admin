@@ -1,0 +1,45 @@
+<template name="SensorDetails">
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title">Sensor Details</h3>
+      <div class="box-tools pull-right">
+      {{#if $.Session.get 'viewSensor'}}
+        <a href="#" title="Delete Sensor" class="btn btn-xs btn-danger delete-sensor"><i class="fa fa-trash"></i> Delete</a>
+        <a href="#" title="Edit Sensor" class="btn btn-xs btn-warning edit-sensor"><i class="fa fa-pencil"></i> Edit</a>
+      {{/if}}
+      
+      {{#if $.Session.get 'editSensor'}}
+        <a href="#" title="cancel" class="btn btn-xs btn-danger cancel-edit-sensor"><i class="fa fa-times"></i> Cancel</a>
+      {{/if}}
+      </div>
+    </div>
+    <div class="box-body">
+    {{#if $.Session.get 'viewSensor'}}
+      <div class="row">
+        <div class="col-xs-12">
+          <p><b>Name:</b> {{singleSensor.name}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          <p><b>Type:</b> {{singleSensor.type}}</p>
+        </div>
+        <div class="col-xs-4">
+          <p><b>Status:</b> {{singleSensor.status}}</p>
+        </div>
+      </div>
+    {{else}}
+      {{#if $.Session.get 'editSensor'}}
+        {{> quickForm collection="Sensor" id="updateSensorForm" type="update" class="update-sensor-form" doc=singleSensor}}
+      {{else}}
+      <div class="alert alert-info">
+        <p><i class="fa fa-info-circle"></i> Select a sensor from the list.</p>
+      </div>
+      {{/if}}
+    {{/if}}
+    <hr />
+
+    </div>
+  </div>
+
+</template>
